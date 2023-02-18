@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <h1>home</h1>
-    <Button text="Button" />
+    <Button
+      @bottonClick="onButtonClick"
+      :disabled="false"
+      classMethod="base"
+      text="Button"
+    />
   </div>
 </template>
 
@@ -14,5 +19,21 @@ import Button from "@/components/Button/Button.vue";
     Button,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  created() {
+    // console.log("created");
+  }
+  mounted() {
+    // console.log("mounted");
+  }
+  updated() {
+    // console.log("updated");
+  }
+  destroyed() {
+    // console.log("destroyed");
+  }
+  public onButtonClick() {
+    alert("onButtonClick");
+  }
+}
 </script>

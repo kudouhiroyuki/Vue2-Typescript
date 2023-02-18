@@ -1,15 +1,37 @@
 <template>
-  <v-btn>{{ text }}</v-btn>
+  <v-btn @click="onClick" :disabled="disabled" :class="classMethod">
+    {{ text }}
+  </v-btn>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Emit, Vue } from "vue-property-decorator";
 
 @Component
 export default class Button extends Vue {
+  @Prop({ default: false })
+  public disabled!: boolean;
+
   @Prop({ default: "" })
-  text!: string;
+  public classMethod!: string;
+
+  @Prop({ default: "" })
+  public text!: string;
+
+  @Emit("bottonClick")
+  public onClick() {
+    //
+  }
 }
 </script>
 
-<style scoped></style>
+<style lang="scss">
+.v-btn {
+  &.v-btn--has-bg {
+    &.base {
+      color: #fff;
+      background-color: #0069d9;
+    }
+  }
+}
+</style>
