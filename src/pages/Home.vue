@@ -4,8 +4,8 @@
     <Button
       @bottonClick="onButtonClick"
       :disabled="false"
-      classMethod="base"
-      text="Button"
+      :classMethod="'base'"
+      :text="'Button'"
     />
   </div>
 </template>
