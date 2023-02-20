@@ -1,5 +1,10 @@
 <template>
-  <v-text-field label="First name" />
+  <v-text-field
+    :name="name"
+    :disabled="disabled"
+    :label="label"
+    :class="classMethod"
+  />
 </template>
 
 <script lang="ts">
@@ -7,14 +12,17 @@ import { Component, Prop, Emit, Vue } from "vue-property-decorator";
 
 @Component
 export default class InputText extends Vue {
-  // @Prop({ default: false })
-  // public disabled!: boolean;
+  @Prop({ default: "" })
+  public name!: string;
 
-  // @Prop({ default: "" })
-  // public classMethod!: string;
+  @Prop({ default: false })
+  public disabled!: boolean;
 
-  // @Prop({ default: "" })
-  // public text!: string;
+  @Prop({ default: "" })
+  public label!: string;
+
+  @Prop({ default: "" })
+  public classMethod!: string;
 
   @Emit("bottonClick")
   public onClick() {
@@ -24,12 +32,8 @@ export default class InputText extends Vue {
 </script>
 
 <style lang="scss">
-.v-btn {
-  &.v-btn--has-bg {
-    &.base {
-      color: #fff;
-      background-color: #0069d9;
-    }
+.v-input {
+  &.base {
   }
 }
 </style>

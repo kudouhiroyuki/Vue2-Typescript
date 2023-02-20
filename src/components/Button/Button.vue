@@ -13,10 +13,10 @@ export default class Button extends Vue {
   public disabled!: boolean;
 
   @Prop({ default: "" })
-  public classMethod!: string;
+  public text!: string;
 
   @Prop({ default: "" })
-  public text!: string;
+  public classMethod!: string;
 
   @Emit("bottonClick")
   public onClick() {

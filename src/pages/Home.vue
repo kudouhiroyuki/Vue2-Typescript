@@ -4,10 +4,15 @@
     <Button
       @bottonClick="onButtonClick"
       :disabled="false"
-      :classMethod="'base'"
       :text="'Button'"
+      :classMethod="'base'"
     />
-    <InputText />
+    <InputText
+      :name="'inputText'"
+      :disabled="false"
+      :label="'InputText'"
+      :classMethod="'base'"
+    />
   </div>
 </template>
 
