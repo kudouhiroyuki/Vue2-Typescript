@@ -8,19 +8,21 @@
       :classMethod="'base'"
     />
     <InputText
-      :modelValue="inputText1"
+      @inputUpdate="onInputUpdate('inputText1', $event)"
+      :value="inputText1"
       :name="'inputText1'"
       :disabled="false"
       :label="'InputText1'"
       :classMethod="'base'"
     />
-    <!-- <InputText
-      :modelValue="'デフォルト値'"
+    <InputText
+      @inputUpdate="onInputUpdate('inputText2', $event)"
+      :value="inputText2"
       :name="'inputText2'"
       :disabled="false"
       :label="'InputText2'"
       :classMethod="'base'"
-    /> -->
+    />
   </div>
 </template>
 
@@ -36,7 +38,8 @@ import InputText from "@/components/InputText/InputText.vue";
   },
 })
 export default class Home extends Vue {
-  inputText1: string = "デフォルト値";
+  public inputText1 = "inputText1";
+  public inputText2 = "inputText2";
 
   created() {
     // console.log("created");
@@ -52,6 +55,10 @@ export default class Home extends Vue {
   }
   public onButtonClick() {
     alert("onButtonClick");
+  }
+  public onInputUpdate(key: string, value: string) {
+    alert("onInputUpdate");
+    key = value;
   }
 }
 </script>

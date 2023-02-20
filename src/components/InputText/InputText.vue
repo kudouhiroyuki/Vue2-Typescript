@@ -1,6 +1,7 @@
 <template>
   <v-text-field
-    v-model="text"
+    @input="onInputUpdate"
+    :value="value"
     :name="name"
     :disabled="disabled"
     :label="label"
@@ -14,7 +15,7 @@ import { Component, Prop, Emit, Vue } from "vue-property-decorator";
 @Component
 export default class InputText extends Vue {
   @Prop({ default: "" })
-  public modelValue!: string;
+  public value!: string;
 
   @Prop({ default: "" })
   public name!: string;
@@ -28,18 +29,9 @@ export default class InputText extends Vue {
   @Prop({ default: "" })
   public classMethod!: string;
 
-  public get text(): string {
-    return this.modelValue;
-  }
-
   @Emit("inputUpdate")
-  public set text(value: string) {
-    //
-  }
-
-  @Emit("bottonClick")
-  public onClick() {
-    //
+  public onInputUpdate(value: string) {
+    return value;
   }
 }
 </script>
