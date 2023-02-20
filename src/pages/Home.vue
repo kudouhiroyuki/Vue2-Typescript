@@ -8,11 +8,19 @@
       :classMethod="'base'"
     />
     <InputText
-      :name="'inputText'"
+      :modelValue="inputText1"
+      :name="'inputText1'"
       :disabled="false"
-      :label="'InputText'"
+      :label="'InputText1'"
       :classMethod="'base'"
     />
+    <!-- <InputText
+      :modelValue="'デフォルト値'"
+      :name="'inputText2'"
+      :disabled="false"
+      :label="'InputText2'"
+      :classMethod="'base'"
+    /> -->
   </div>
 </template>
 
@@ -28,6 +36,8 @@ import InputText from "@/components/InputText/InputText.vue";
   },
 })
 export default class Home extends Vue {
+  inputText1: string = "デフォルト値";
+
   created() {
     // console.log("created");
   }
