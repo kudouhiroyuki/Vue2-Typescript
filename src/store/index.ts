@@ -1,11 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import Home from "./home";
+import common from "./common";
+import TopPage from "./topPage";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    home: Home,
+    common: common,
+    topPage: TopPage,
   },
 });

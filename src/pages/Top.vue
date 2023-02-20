@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div class="topPage">
+    <TheHeader />
     <h1>home</h1>
     <Button
       @bottonClick="onButtonClick"
@@ -8,19 +9,11 @@
       :classMethod="'base'"
     />
     <InputText
-      @inputUpdate="onInputUpdate('inputText1', $event)"
-      :value="inputText1"
-      :name="'inputText1'"
+      @inputUpdate="onInputUpdate('keyword', $event)"
+      :value="keyword"
+      :name="'keyword'"
       :disabled="false"
-      :label="'InputText1'"
-      :classMethod="'base'"
-    />
-    <InputText
-      @inputUpdate="onInputUpdate('inputText2', $event)"
-      :value="inputText2"
-      :name="'inputText2'"
-      :disabled="false"
-      :label="'InputText2'"
+      :label="'キーワードを入れてください'"
       :classMethod="'base'"
     />
   </div>
@@ -28,18 +21,19 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import TheHeader from "@/components/TheHeader.vue";
 import Button from "@/components/Button/Button.vue";
 import InputText from "@/components/InputText/InputText.vue";
 
 @Component({
   components: {
+    TheHeader,
     Button,
     InputText,
   },
 })
-export default class Home extends Vue {
-  public inputText1 = this.$store.getters.getState.inputText1;
-  public inputText2 = this.$store.getters.getState.inputText2;
+export default class TopPage extends Vue {
+  public keyword = this.$store.getters.topPageState.keyword;
 
   created() {
     // console.log("created");
@@ -58,7 +52,6 @@ export default class Home extends Vue {
   }
   public onInputUpdate(key: string, value: string) {
     key = value;
-    console.log(this.$store.state.home);
   }
 }
 </script>

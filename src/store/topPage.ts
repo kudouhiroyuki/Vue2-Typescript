@@ -4,19 +4,17 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 type InitialState = {
-  inputText1: string;
-  inputText2: string;
+  keyword: string;
 };
 
 const initialState: InitialState = {
-  inputText1: "test1",
-  inputText2: "test2",
+  keyword: "",
 };
 
 export default {
   state: initialState,
   getters: {
-    getState: (state: InitialState) => {
+    topPageState: (state: InitialState) => {
       return state;
     },
   },

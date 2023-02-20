@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>about</h1>
+  <div class="sarch">
+    <h1>Search</h1>
   </div>
 </template>
 
@@ -10,5 +10,5 @@ import { Component, Vue } from "vue-property-decorator";
 @Component({
   components: {},
 })
-export default class About extends Vue {}
+export default class SearchPage extends Vue {}
 </script>
