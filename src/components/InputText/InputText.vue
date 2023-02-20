@@ -30,7 +30,7 @@ export default class InputText extends Vue {
   public classMethod!: string;
 
   @Emit("inputUpdate")
-  public onInputUpdate(value: string) {
+  public onInputUpdate(value: string): string {
     return value;
   }
 }
