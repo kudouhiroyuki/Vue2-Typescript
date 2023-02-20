@@ -38,8 +38,8 @@ import InputText from "@/components/InputText/InputText.vue";
   },
 })
 export default class Home extends Vue {
-  public inputText1 = "inputText1";
-  public inputText2 = "inputText2";
+  public inputText1 = this.$store.getters.getState.inputText1;
+  public inputText2 = this.$store.getters.getState.inputText2;
 
   created() {
     // console.log("created");
@@ -57,8 +57,8 @@ export default class Home extends Vue {
     alert("onButtonClick");
   }
   public onInputUpdate(key: string, value: string) {
-    alert("onInputUpdate");
     key = value;
+    console.log(this.$store.state.home);
   }
 }
 </script>
