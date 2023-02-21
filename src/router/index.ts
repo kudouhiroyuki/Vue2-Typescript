@@ -1,19 +1,20 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import TopPage from "../pages/Top.vue";
+import HairTop from "../pages/top/Hair.vue";
+import NailTop from "../pages/top/Nail.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: "/",
-    name: "topPage",
-    component: TopPage,
+    name: "hairTop",
+    component: HairTop,
   },
   {
     path: "/nail",
-    name: "topPage",
-    component: TopPage,
+    name: "nailTop",
+    component: NailTop,
   },
 ];
 

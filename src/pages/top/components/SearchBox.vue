@@ -1,13 +1,5 @@
 <template>
-  <div class="topPage">
-    <TheHeader />
-    <h1>home</h1>
-    <Button
-      @bottonClick="onButtonClick"
-      :disabled="false"
-      :text="'Button'"
-      :classMethod="'base'"
-    />
+  <div class="searchBox">
     <InputText
       @inputUpdate="onInputUpdate('keyword', $event)"
       :value="keyword"
@@ -16,37 +8,27 @@
       :label="'キーワードを入れてください'"
       :classMethod="'base'"
     />
+    <Button
+      @bottonClick="onButtonClick"
+      :disabled="false"
+      :text="'Button'"
+      :classMethod="'base'"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import TheHeader from "@/components/TheHeader.vue";
 import Button from "@/components/Button/Button.vue";
 import InputText from "@/components/InputText/InputText.vue";
 
 @Component({
   components: {
-    TheHeader,
     Button,
     InputText,
   },
 })
-export default class TopPage extends Vue {
-  created() {
-    // console.log("created");
-  }
-  mounted() {
-    // console.log("mounted");
-  }
-  updated() {
-    console.log(this.$store.getters.commonState);
-    console.log(this.$store.getters.topPageState);
-  }
-  destroyed() {
-    // console.log("destroyed");
-  }
-
+export default class SearchBox extends Vue {
   get keyword() {
     return this.$store.getters.topPageState.keyword;
   }
@@ -61,3 +43,5 @@ export default class TopPage extends Vue {
   }
 }
 </script>
+
+<style lang="scss"></style>
