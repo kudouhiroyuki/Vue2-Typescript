@@ -19,7 +19,7 @@ import SearchBox from "./components/SearchBox.vue";
 })
 export default class hairTop extends Vue {
   created() {
-    // console.log("created");
+    this.$store.dispatch("commonState", { currentNav: "hair" });
   }
   mounted() {
     // console.log("mounted");

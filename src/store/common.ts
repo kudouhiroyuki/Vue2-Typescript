@@ -1,10 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { Commit } from "vuex";
 
 Vue.use(Vuex);
 
 type InitialState = {
   currentNav: string;
+  [key: string]: string;
 };
 
 const initialState: InitialState = {
@@ -19,13 +21,15 @@ export default {
     },
   },
   mutations: {
-    // setCount(state: any, newCount: any) {
-    //   state.count = newCount;
-    // },
+    commonState(state: InitialState, newState: InitialState) {
+      for (const [key, value] of Object.entries(newState)) {
+        state[key] = value;
+      }
+    },
   },
   actions: {
-    // aaaaaa({ commit }: any, newCount: any) {
-    //   commit("setCount", newCount);
-    // },
+    commonState({ commit }: { commit: Commit }, newState: InitialState) {
+      commit("commonState", newState);
+    },
   },
 };

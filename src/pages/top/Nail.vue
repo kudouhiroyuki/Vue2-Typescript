@@ -19,7 +19,7 @@ import SearchBox from "./components/SearchBox.vue";
 })
 export default class NailTop extends Vue {
   created() {
-    // console.log("created");
+    this.$store.dispatch("commonState", { currentNav: "nail" });
   }
   mounted() {
     // console.log("mounted");
