@@ -33,8 +33,6 @@ import InputText from "@/components/InputText/InputText.vue";
   },
 })
 export default class TopPage extends Vue {
-  public keyword = this.$store.getters.topPageState.keyword;
-
   created() {
     // console.log("created");
   }
@@ -42,16 +40,24 @@ export default class TopPage extends Vue {
     // console.log("mounted");
   }
   updated() {
-    // console.log("updated");
+    console.log(this.$store.getters.commonState);
+    console.log(this.$store.getters.topPageState);
   }
   destroyed() {
     // console.log("destroyed");
   }
+
+  get keyword() {
+    return this.$store.getters.topPageState.keyword;
+  }
+
   public onButtonClick() {
     alert("onButtonClick");
   }
   public onInputUpdate(key: string, value: string) {
-    key = value;
+    const newState: { [key: string]: string } = {};
+    newState[key] = value;
+    this.$store.dispatch("topPageState", newState);
   }
 }
 </script>

@@ -24,7 +24,7 @@ export default {
     // },
   },
   actions: {
-    // setCountAction({ commit: any }, newCount: any) {
+    // aaaaaa({ commit }: any, newCount: any) {
     //   commit("setCount", newCount);
     // },
   },
