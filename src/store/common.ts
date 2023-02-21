@@ -4,31 +4,31 @@ import { Commit } from "vuex";
 
 Vue.use(Vuex);
 
-type InitialState = {
+type CommonState = {
   currentNav: string;
   [key: string]: string;
 };
 
-const initialState: InitialState = {
+const state: CommonState = {
   currentNav: "",
 };
 
 export default {
-  state: initialState,
+  state,
   getters: {
-    commonState: (state: InitialState) => {
+    commonState: (state: CommonState) => {
       return state;
     },
   },
   mutations: {
-    commonState(state: InitialState, newState: InitialState) {
+    commonState(state: CommonState, newState: CommonState) {
       for (const [key, value] of Object.entries(newState)) {
         state[key] = value;
       }
     },
   },
   actions: {
-    commonState({ commit }: { commit: Commit }, newState: InitialState) {
+    commonState({ commit }: { commit: Commit }, newState: CommonState) {
       commit("commonState", newState);
     },
   },
