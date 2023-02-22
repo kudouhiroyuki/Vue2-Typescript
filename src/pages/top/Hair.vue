@@ -27,7 +27,7 @@ export default class hairTop extends Vue {
     this.$store.dispatch("commonState", { currentNav: "hair" });
   }
   mounted() {
-    console.log(this.$store);
+    // console.log("mounted");
   }
   updated() {
     // console.log("updated");
@@ -40,7 +40,7 @@ export default class hairTop extends Vue {
     const menusApi = new MenusApi();
     menusApi.get({ category_id: 1 }).then((res) => {
       this.$store.dispatch("topPageState", {
-        menus: res.menus,
+        menus: res,
       });
     });
   }

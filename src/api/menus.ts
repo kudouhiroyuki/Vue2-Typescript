@@ -1,17 +1,31 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 
-export interface Params {
+export interface Menus {
+  menu_id: number;
+  menu_name: string;
+  menu_image_url: string;
+}
+
+export interface MenusRequest {
   category_id: number;
 }
 
+export interface MenusResponse {
+  menus: Menus[];
+}
+
 export class MenusApi {
-  public async get(params: Params) {
-    return await axios
-      .get(`https://beauty.tsuku2.jp/api/menus`, { params })
-      .then((res) => {
-        return res.data;
+  public async get(params: MenusRequest) {
+    const options: AxiosRequestConfig = {
+      url: `https://beauty.tsuku2.jp/api/menus`,
+      method: "GET",
+      params,
+    };
+    return await axios(options)
+      .then((res: AxiosResponse<MenusResponse>) => {
+        return res.data.menus;
       })
-      .catch((error) => {
+      .catch((error: AxiosError<{ error: string }>) => {
         return error;
       });
   }

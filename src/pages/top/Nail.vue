@@ -25,7 +25,6 @@ export default class NailTop extends Vue {
   get menus() {
     return this.$store.getters.topPageState.menus;
   }
-
   created() {
     this.getMenusApi();
     this.$store.dispatch("commonState", { currentNav: "nail" });
@@ -44,7 +43,7 @@ export default class NailTop extends Vue {
     const menusApi = new MenusApi();
     menusApi.get({ category_id: 2 }).then((res) => {
       this.$store.dispatch("topPageState", {
-        menus: res.menus,
+        menus: res,
       });
     });
   }

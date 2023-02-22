@@ -1,7 +1,7 @@
 <template>
   <div class="cardType1">
-    <li v-for="fruit in menus" :key="fruit">
-      {{ fruit }}
+    <li v-for="item in menus" :key="item.menu_id">
+      {{ item }}
     </li>
   </div>
 </template>

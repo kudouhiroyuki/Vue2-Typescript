@@ -1,6 +1,5 @@
 import Vue from "vue";
-import Vuex from "vuex";
-import { Commit } from "vuex";
+import Vuex, { Commit } from "vuex";
 
 Vue.use(Vuex);
 
