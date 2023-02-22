@@ -29,10 +29,9 @@ import InputText from "@/components/InputText/InputText.vue";
   },
 })
 export default class SearchBox extends Vue {
-  get keyword() {
+  public get keyword() {
     return this.$store.getters.topPageState.keyword;
   }
-
   public onButtonClick() {
     alert("onButtonClick");
   }
