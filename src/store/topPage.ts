@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { Commit } from "vuex";
-import * as menusApi from "@/api/menus";
+import { MenusApi } from "@/api/menus";
 
 Vue.use(Vuex);
 
@@ -33,7 +33,10 @@ export default {
   actions: {
     topPageState({ commit }: { commit: Commit }, newState: TopPageState) {
       commit("topPageState", newState);
-      console.log(menusApi.get({ category_id: 1 }));
+      const menusApi = new MenusApi();
+      menusApi.get({ category_id: 1 }).then((res) => {
+        console.log(res);
+      });
     },
   },
 };
