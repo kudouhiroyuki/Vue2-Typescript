@@ -1,6 +1,6 @@
 <template>
   <v-text-field
-    @input="onInputUpdate"
+    @input="onChange"
     :value="value"
     :name="name"
     :disabled="disabled"
@@ -29,8 +29,8 @@ export default class InputText extends Vue {
   @Prop({ default: "" })
   public classMethod!: string;
 
-  @Emit("inputUpdate")
-  public onInputUpdate(value: string): string {
+  @Emit("inputTextChange")
+  public onChange(value: string): string {
     return value;
   }
 }

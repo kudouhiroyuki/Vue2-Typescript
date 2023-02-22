@@ -1,7 +1,7 @@
 <template>
   <div class="searchBox">
     <InputText
-      @inputUpdate="onInputUpdate('keyword', $event)"
+      @inputTextChange="onInputTextChange('keyword', $event)"
       :value="keyword"
       :name="'keyword'"
       :disabled="false"
@@ -35,7 +35,7 @@ export default class SearchBox extends Vue {
   public onButtonClick() {
     alert("onButtonClick");
   }
-  public onInputUpdate(key: string, value: string) {
+  public onInputTextChange(key: string, value: string) {
     const newState: { [key: string]: string } = {};
     newState[key] = value;
     this.$store.dispatch("topPageState", newState);
