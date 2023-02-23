@@ -17,8 +17,8 @@ export interface MenusResponse {
 export class MenusApi {
   public async get(params: MenusRequest) {
     const options: AxiosRequestConfig = {
-      url: `https://beauty.tsuku2.jp/api/menus`,
       method: "GET",
+      url: `https://beauty.tsuku2.jp/api/menus`,
       params,
     };
     return await axios(options)
@@ -26,7 +26,7 @@ export class MenusApi {
         return res.data.menus;
       })
       .catch((error: AxiosError<{ error: string }>) => {
-        return error;
+        throw new Error(error.message);
       });
   }
 }
