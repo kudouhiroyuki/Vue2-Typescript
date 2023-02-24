@@ -16,7 +16,7 @@ export interface MenusGetResponseBaseDto {
     menu_name: string;
     menu_image_url: string;
   }[];
-  [key: string]: object;
+  // [key: string]: object;
 }
 
 export interface MenusGetResponseResultDto {
@@ -26,13 +26,6 @@ export interface MenusGetResponseResultDto {
     menu_image_url: string;
   }[];
 }
-
-// export interface MenusGetResponseResultDto {
-//   menuId: number;
-//   menuName: string;
-//   menuImageUrl: string;
-//   [key: string]: string | number;
-// }[]
 
 // const test: MenusGetResponseResultDto[] = [
 //   {

@@ -8,17 +8,20 @@ export interface ToCamelCase {
 export class BaseApi {
   public toSnakeCase(params: ToSnakeCase): object {
     const result: ToSnakeCase = {};
-    Object.keys(params).forEach((baseKey) => {
-      const convertKey = baseKey
+    for (const key of Object.keys(params)) {
+      const convertKey = key
         .split(/(?=[A-Z])/)
         .join("_")
         .toLowerCase();
-      result[convertKey] = params[baseKey];
-    });
+      result[convertKey] = params[key];
+    }
     return result;
   }
   public toCamelCase(resData: any): any {
     const result: any = [];
+    // const test = [params].map((value) => {
+    //   console.log(value);
+    // });
     resData.forEach((value: any, index: any) => {
       Object.keys(value).forEach((k: any, v: any) => {
         const convertKey = k
