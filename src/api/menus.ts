@@ -22,7 +22,7 @@ export interface MenusGetResponseResultDto {
   menuId: number;
   menuName: string;
   menuImageUrl: string;
-};
+}
 
 export class MenusApi extends BaseApi {
   public async getMenus(params: MenusGetRequestBaseDto) {
