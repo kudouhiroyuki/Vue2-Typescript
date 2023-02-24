@@ -2,9 +2,9 @@ import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
 import { BaseApi } from "@/api/base";
 
 export interface MenuEntity {
-  menu_id: number;
-  menu_name: string;
-  menu_image_url: string;
+  menuId: number;
+  menuName: string;
+  menuImage_url: string;
 }
 
 export interface MenusGetRequestBaseDto {
