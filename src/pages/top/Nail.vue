@@ -12,8 +12,7 @@ import { Component, Vue } from "vue-property-decorator";
 import TheHeader from "@/components/TheHeader.vue";
 import SearchBox from "./components/SearchBox.vue";
 import CardBox1 from "./components/CardBox1.vue";
-import { RequestUtils } from "@/utils/requestUtils";
-import { MenusController, MenusGetRequestDto } from "@/api/menus";
+import { MenusApi } from "@/api/menus";
 
 @Component({
   components: {
@@ -38,11 +37,8 @@ export default class NailTop extends Vue {
   }
 
   public getMenusApi() {
-    const menusController = new MenusController();
-    const params = RequestUtils.toSnakeCase({
-      categoryId: 1,
-    }) as MenusGetRequestDto;
-    menusController.getMenus(params).then((res) => {
+    const menusApi = new MenusApi();
+    menusApi.getMenus({ categoryId: 2 }).then((res) => {
       this.$store.dispatch("topPageState", {
         menus: res,
       });
