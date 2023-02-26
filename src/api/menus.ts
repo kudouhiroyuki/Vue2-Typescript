@@ -25,7 +25,9 @@ export interface MenusGetResponseResultDto {
 }
 
 export class MenusApi extends BaseApi {
-  public async getMenus(params: MenusGetRequestBaseDto): Promise<MenusGetResponseResultDto[]> {
+  public async getMenus(
+    params: MenusGetRequestBaseDto
+  ): Promise<MenusGetResponseResultDto[]> {
     const resultParams = <MenusGetRequestResultDto>this.toSnakeCase(params);
     const options: AxiosRequestConfig = {
       method: "GET",
