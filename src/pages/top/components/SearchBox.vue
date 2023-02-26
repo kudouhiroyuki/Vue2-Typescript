@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Button from "@/components/Button/Button.vue";
+import Button from "@/components/button/Button.vue";
 import InputText from "@/components/InputText/InputText.vue";
 
 @Component({
