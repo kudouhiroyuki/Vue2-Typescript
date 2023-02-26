@@ -1,13 +1,14 @@
 import Vue from "vue";
 import Vuex, { Commit } from "vuex";
+import { MenusGetResponseResultDto } from "@/api/menus";
 
 Vue.use(Vuex);
 
 type TopPageState = {
   area: string;
   keyword: string;
-  menus: { [key: string]: string }[];
-  [key: string]: string | { [key: string]: string }[];
+  menus: MenusGetResponseResultDto[];
+  [key: string]: string | { [key: string]: string | number }[];
 };
 
 const state: TopPageState = {

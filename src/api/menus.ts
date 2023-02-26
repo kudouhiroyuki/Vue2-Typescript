@@ -22,6 +22,7 @@ export interface MenusGetResponseResultDto {
   menuId: number;
   menuName: string;
   menuImageUrl: string;
+  [key: string]: string | number;
 }
 
 export class MenusApi extends BaseApi {
