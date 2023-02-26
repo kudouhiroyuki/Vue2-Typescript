@@ -8,7 +8,7 @@ type TopPageState = {
   area: string;
   keyword: string;
   menus: MenusGetResponseResultDto[];
-  [key: string]: string | { [key: string]: string | number }[];
+  [key: string]: string | MenusGetResponseResultDto[];
 };
 
 const state: TopPageState = {
