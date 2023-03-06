@@ -10,9 +10,9 @@ describe("components/button/Button.vue", () => {
         text: "Button"
       }
     });
-    expect(wrapper.attributes().disabled).toMatch("disabled");
-    expect(wrapper.attributes().class).toMatch("base");
-    expect(wrapper.text()).toMatch("Button");
+    expect(wrapper.find(".v-btn").attributes().disabled).toMatch("disabled");
+    expect(wrapper.find(".v-btn").attributes().class).toMatch("base");
+    expect(wrapper.find(".v-btn__content").text()).toMatch("Button");
   });
   test("onClick", async () => {
     const wrapper = mount(Button);
