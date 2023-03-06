@@ -5,16 +5,21 @@ describe("components/inputText/InputText.vue", () => {
   test("props", async () => {
     const wrapper = mount(InputText, {
       propsData: {
+        value: "value",
         name: "keyword",
         disabled: true,
         classMethod: "base",
         label: "キーワードを入れてください"
       }
     });
-    expect(wrapper.find("input").attributes().name).toMatch("keyword");
-    expect(wrapper.find("input").attributes().disabled).toMatch("disabled");
-    expect(wrapper.find(".v-input").attributes().class).toMatch("base");
-    expect(wrapper.find(".v-label").text()).toMatch("キーワードを入れてください");
+    const inputWrap = wrapper.find(".v-input");
+    const inputLabel = wrapper.find(".v-label");
+    const inputField = wrapper.find('input').element as HTMLInputElement;
+    expect(inputWrap.attributes().class).toMatch("base");
+    expect(inputLabel.text()).toBe("キーワードを入れてください");
+    expect(inputField.value).toBe("value");
+    expect(inputField.name).toBe("keyword");
+    expect(inputField.disabled).toBe(true);
   });
   test("onChange", async () => {
     const wrapper = mount(InputText);
