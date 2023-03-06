@@ -10,8 +10,8 @@ describe("components/button/Button.vue", () => {
         text: "Button"
       }
     });
-    expect(wrapper.attributes().class).toMatch("base");
     expect(wrapper.attributes().disabled).toMatch("disabled");
+    expect(wrapper.attributes().class).toMatch("base");
     expect(wrapper.text()).toMatch("Button");
   });
   test("onClick", async () => {

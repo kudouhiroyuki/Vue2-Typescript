@@ -7,4 +7,6 @@ npm run test:unit
 
 ■Vuetify
 https://vuetifyjs.com/en/components/alerts/
+
+wrapper.html()
 ```
