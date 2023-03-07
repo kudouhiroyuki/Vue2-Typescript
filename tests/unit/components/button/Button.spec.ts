@@ -2,6 +2,8 @@ import { mount } from "@vue/test-utils";
 import Button from "@/components/button/Button.vue";
 
 describe("components/button/Button.vue", () => {
+  beforeEach(() => {
+  })
   test("props", async () => {
     const wrapper = mount(Button, {
       propsData: {

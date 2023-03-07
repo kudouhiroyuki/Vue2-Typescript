@@ -2,6 +2,8 @@ import { mount } from "@vue/test-utils";
 import InputText from "@/components/inputText/InputText.vue";
 
 describe("components/inputText/InputText.vue", () => {
+  beforeEach(() => {
+  })
   test("props", async () => {
     const wrapper = mount(InputText, {
       propsData: {
