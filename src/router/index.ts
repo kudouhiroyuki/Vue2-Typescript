@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import HairTop from "../pages/top/Hair.vue";
-import NailTop from "../pages/top/Nail.vue";
+import Top from "../pages/Top.vue";
 
 Vue.use(VueRouter);
 
@@ -9,12 +8,12 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "hairTop",
-    component: HairTop,
+    component: Top,
   },
   {
     path: "/nail",
     name: "nailTop",
-    component: NailTop,
+    component: Top,
   },
 ];
 

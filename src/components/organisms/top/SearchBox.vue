@@ -19,8 +19,8 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Button from "@/components/button/Button.vue";
-import InputText from "@/components/inputText/InputText.vue";
+import Button from "@/components/atom/button/Button.vue";
+import InputText from "@/components/atom/inputText/InputText.vue";
 
 @Component({
   components: {

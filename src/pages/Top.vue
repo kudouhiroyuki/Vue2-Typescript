@@ -1,7 +1,7 @@
 <template>
-  <div class="nailTop">
+  <div class="hairTop">
     <TheHeader />
-    <h1>ネイル・まつげ</h1>
+    <h1>ヘアサロン・メイク</h1>
     <SearchBox />
     <CardBox1 />
   </div>
@@ -9,9 +9,9 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import TheHeader from "@/components/TheHeader.vue";
-import SearchBox from "./components/SearchBox.vue";
-import CardBox1 from "./components/CardBox1.vue";
+import TheHeader from "@/components/organisms/TheHeader.vue";
+import SearchBox from "@/components/organisms/top/SearchBox.vue";
+import CardBox1 from "@/components/organisms/top/CardBox1.vue";
 import { MenusApi, MenusGetRequestBaseDto } from "@/api/menus";
 
 @Component({
@@ -21,10 +21,10 @@ import { MenusApi, MenusGetRequestBaseDto } from "@/api/menus";
     CardBox1,
   },
 })
-export default class NailTop extends Vue {
+export default class hairTop extends Vue {
   created() {
     this.getMenusApi();
-    this.$store.dispatch("commonState", { currentNav: "nail" });
+    this.$store.dispatch("commonState", { currentNav: "hair" });
   }
   mounted() {
     // console.log("mounted");
@@ -38,7 +38,7 @@ export default class NailTop extends Vue {
 
   public getMenusApi() {
     const menusApi = new MenusApi();
-    const params: MenusGetRequestBaseDto = { categoryId: 2 };
+    const params: MenusGetRequestBaseDto = { categoryId: 1 };
     menusApi.getMenus(params).then((res) => {
       this.$store.dispatch("topPageState", {
         menus: res,
