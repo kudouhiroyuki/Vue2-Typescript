@@ -1,6 +1,6 @@
 import commonStore from "@/store/common"
 
-describe("components/TheHeader.vue", () => {
+describe("components/organisms/TheHeader.vue", () => {
   let state: any = null
   beforeEach(() => {
     state = { currentNav: "hair" }
@@ -8,6 +8,5 @@ describe("components/TheHeader.vue", () => {
   test("getters", async () => {
     const currentNav = commonStore.getters.commonState(state);
     console.log(currentNav);
-    // expect(currentNav).toEqual([ dogs[0], dogs[2] ])
   });
 });

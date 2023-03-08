@@ -4,14 +4,14 @@ import { MenusGetResponseResultDto } from "@/api/menus";
 
 Vue.use(Vuex);
 
-type TopPageState = {
+type TopState = {
   area: string;
   keyword: string;
   menus: MenusGetResponseResultDto[];
   [key: string]: string | MenusGetResponseResultDto[];
 };
 
-const state: TopPageState = {
+const state: TopState = {
   area: "",
   keyword: "",
   menus: [],
@@ -20,20 +20,20 @@ const state: TopPageState = {
 export default {
   state,
   getters: {
-    topPageState: (state: TopPageState) => {
+    topState: (state: TopState) => {
       return state;
     },
   },
   mutations: {
-    topPageState(state: TopPageState, newState: TopPageState) {
+    topState(state: TopState, newState: TopState) {
       for (const [key, value] of Object.entries(newState)) {
         state[key] = value;
       }
     },
   },
   actions: {
-    topPageState({ commit }: { commit: Commit }, newState: TopPageState) {
-      commit("topPageState", newState);
+    topState({ commit }: { commit: Commit }, newState: TopState) {
+      commit("topState", newState);
     },
   },
 };

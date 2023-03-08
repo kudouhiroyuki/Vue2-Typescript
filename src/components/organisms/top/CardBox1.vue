@@ -34,7 +34,7 @@ export default class CardType1 extends Vue {
     return this.$store.getters.commonState.currentNav;
   }
   public get menus() {
-    return this.$store.getters.topPageState.menus;
+    return this.$store.getters.topState.menus;
   }
 
   created() {

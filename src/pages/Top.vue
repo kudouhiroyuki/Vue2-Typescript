@@ -40,7 +40,7 @@ export default class hairTop extends Vue {
     const menusApi = new MenusApi();
     const params: MenusGetRequestBaseDto = { categoryId: 1 };
     menusApi.getMenus(params).then((res) => {
-      this.$store.dispatch("topPageState", {
+      this.$store.dispatch("topState", {
         menus: res,
       });
     });

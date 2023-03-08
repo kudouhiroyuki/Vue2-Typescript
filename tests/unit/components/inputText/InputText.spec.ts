@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
-import InputText from "@/components/inputText/InputText.vue";
+import InputText from "@/components/atom/inputText/InputText.vue";
 
-describe("components/inputText/InputText.vue", () => {
+describe("components/atom/inputText/InputText.vue", () => {
   beforeEach(() => {
   })
   test("props", async () => {

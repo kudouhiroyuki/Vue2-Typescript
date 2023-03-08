@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
-import Button from "@/components/button/Button.vue";
+import Button from "@/components/atom/button/Button.vue";
 
-describe("components/button/Button.vue", () => {
+describe("components/atom/button/Button.vue", () => {
   beforeEach(() => {
   })
   test("props", async () => {
