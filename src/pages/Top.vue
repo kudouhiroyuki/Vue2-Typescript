@@ -12,7 +12,7 @@ import { Component, Vue } from "vue-property-decorator";
 import TheHeader from "@/components/organisms/TheHeader.vue";
 import SearchBox from "@/components/organisms/top/SearchBox.vue";
 import CardBox1 from "@/components/organisms/top/CardBox1.vue";
-import { MenusApi, MenusGetRequestBaseDto } from "@/api/menus";
+import { MenusGetRequestBaseDto } from "@/api/menus";
 
 @Component({
   components: {
@@ -37,13 +37,8 @@ export default class hairTop extends Vue {
   }
 
   public getMenusApi() {
-    const menusApi = new MenusApi();
     const params: MenusGetRequestBaseDto = { categoryId: 1 };
-    menusApi.getMenus(params).then((res) => {
-      this.$store.dispatch("topState", {
-        menus: res,
-      });
-    });
+    this.$store.dispatch("topStore/menusAction", params);
   }
 }
 </script>

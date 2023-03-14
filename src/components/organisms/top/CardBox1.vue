@@ -2,7 +2,7 @@
   <div class="cardType1">
     <h3 class="mainTitle">{{ mainTitle }}</h3>
     <span class="subTitle">{{ subTitle }}</span>
-    <li v-for="item in menus" :key="item.menu_id">
+    <li v-for="item in menus" :key="item.menuId">
       {{ item }}
     </li>
   </div>
@@ -10,7 +10,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-
 @Component({
   components: {},
 })
@@ -34,7 +33,7 @@ export default class CardType1 extends Vue {
     return this.$store.getters.commonState.currentNav;
   }
   public get menus() {
-    return this.$store.getters.topState.menus;
+    return this.$store.getters["topStore/menus"];
   }
 
   created() {

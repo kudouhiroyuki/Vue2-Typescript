@@ -1,6 +1,10 @@
 import Vue from "vue";
 import Vuex, { Commit } from "vuex";
-import { MenusGetResponseResultDto } from "@/api/menus";
+import {
+  MenusApi,
+  MenusGetRequestBaseDto,
+  MenusGetResponseResultDto,
+} from "@/api/menus";
 
 Vue.use(Vuex);
 
@@ -18,22 +22,25 @@ const state: TopState = {
 };
 
 export default {
+  namespaced: true,
   state,
   getters: {
-    topState: (state: TopState) => {
-      return state;
-    },
+    menus: (state: TopState) => state.menus,
   },
   mutations: {
-    topState(state: TopState, newState: TopState) {
-      for (const [key, value] of Object.entries(newState)) {
-        state[key] = value;
-      }
+    menusUpdate(state: TopState, newState: MenusGetResponseResultDto[]) {
+      state.menus = newState;
     },
   },
   actions: {
-    topState({ commit }: { commit: Commit }, newState: TopState) {
-      commit("topState", newState);
+    menusAction(
+      { commit }: { commit: Commit },
+      params: MenusGetRequestBaseDto
+    ) {
+      const menusApi = new MenusApi();
+      menusApi.getMenus(params).then((res) => {
+        commit("menusUpdate", res);
+      });
     },
   },
 };
