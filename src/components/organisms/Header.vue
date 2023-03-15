@@ -15,7 +15,7 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
-export default class TheHeader extends Vue {
+export default class Header extends Vue {
   public get currentNav(): string {
     return this.$store.getters.commonState.currentNav;
   }

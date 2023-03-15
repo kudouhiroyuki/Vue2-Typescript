@@ -1,6 +1,6 @@
 <template>
   <div class="hairTop">
-    <TheHeader />
+    <Header />
     <h1>ヘアサロン・メイク</h1>
     <SearchBox />
     <CardBox1 />
@@ -9,14 +9,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import TheHeader from "@/components/organisms/TheHeader.vue";
+import Header from "@/components/organisms/Header.vue";
 import SearchBox from "@/components/organisms/top/SearchBox.vue";
 import CardBox1 from "@/components/organisms/top/CardBox1.vue";
 import { MenusGetRequestBaseDto } from "@/api/menus";
 
 @Component({
   components: {
-    TheHeader,
+    Header,
     SearchBox,
     CardBox1,
   },
