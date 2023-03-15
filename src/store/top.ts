@@ -15,6 +15,8 @@ export interface TopState {
   [key: string]: string | MenusGetResponseResultDto[];
 }
 
+export const SET_MENUS = "SET_MENUS";
+
 const state: TopState = {
   area: "",
   keyword: "",
@@ -28,18 +30,18 @@ export default {
     menus: (state: TopState) => state.menus,
   },
   mutations: {
-    menusUpdate(state: TopState, newState: MenusGetResponseResultDto[]) {
+    [SET_MENUS](state: TopState, newState: MenusGetResponseResultDto[]) {
       state.menus = newState;
     },
   },
   actions: {
-    menusAction(
+    updateMenus(
       { commit }: { commit: Commit },
       params: MenusGetRequestBaseDto
     ) {
       const menusApi = new MenusApi();
       menusApi.getMenus(params).then((res) => {
-        commit("menusUpdate", res);
+        commit(SET_MENUS, res);
       });
     },
   },
