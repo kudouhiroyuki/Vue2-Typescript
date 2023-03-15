@@ -8,12 +8,12 @@ import {
 
 Vue.use(Vuex);
 
-type TopState = {
+export interface TopState {
   area: string;
   keyword: string;
   menus: MenusGetResponseResultDto[];
   [key: string]: string | MenusGetResponseResultDto[];
-};
+}
 
 const state: TopState = {
   area: "",
