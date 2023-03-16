@@ -35,7 +35,7 @@ export default {
     },
   },
   actions: {
-    updateMenus(
+    getMenusApi(
       { commit }: { commit: Commit },
       params: MenusGetRequestBaseDto
     ) {

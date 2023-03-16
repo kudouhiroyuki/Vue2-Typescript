@@ -38,7 +38,7 @@ export default class hairTop extends Vue {
 
   public getMenusApi() {
     const params: MenusGetRequestBaseDto = { categoryId: 1 };
-    this.$store.dispatch("topStore/updateMenus", params);
+    this.$store.dispatch("topStore/getMenusApi", params);
   }
 }
 </script>
