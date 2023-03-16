@@ -1,7 +1,6 @@
 <template>
   <div class="cardType1">
-    <h3 class="mainTitle">{{ mainTitle }}</h3>
-    <span class="subTitle">{{ subTitle }}</span>
+    <SectionTitle1 />
     <li v-for="item in menus" :key="item.menuId">
       {{ item }}
     </li>
@@ -10,8 +9,12 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import SectionTitle1 from "@/components/molecules/SectionTitle1.vue";
+
 @Component({
-  components: {},
+  components: {
+    SectionTitle1,
+  },
 })
 export default class CardType1 extends Vue {
   public mainTitle = "";
