@@ -1,6 +1,19 @@
 <template>
   <div class="cardType1">
-    <SectionTitle1 />
+    <Heading
+      :tag="'h1'"
+      :text="'Hair style'"
+      :styleColor="'#ed7ea0'"
+      :styleFontWeight="'lighter'"
+      :styleTextAlign="'center'"
+    />
+    <Heading
+      :tag="'h4'"
+      :text="'ヘアスタイルから探す'"
+      :styleColor="'#5f5f5f'"
+      :styleFontWeight="'bold'"
+      :styleTextAlign="'center'"
+    />
     <li v-for="item in menus" :key="item.menuId">
       {{ item }}
     </li>
@@ -9,11 +22,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import SectionTitle1 from "@/components/molecules/SectionTitle1.vue";
+import Heading from "@/components/atom/heading/Heading.vue";
 
 @Component({
   components: {
-    SectionTitle1,
+    Heading,
   },
 })
 export default class CardType1 extends Vue {

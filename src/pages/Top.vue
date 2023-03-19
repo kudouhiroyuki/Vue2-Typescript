@@ -1,7 +1,6 @@
 <template>
   <div class="hairTop">
     <Header />
-    <h1>ヘアサロン・メイク</h1>
     <SearchBox />
     <CardBox1 />
   </div>
