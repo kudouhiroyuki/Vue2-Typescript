@@ -1,8 +1,11 @@
 <template>
   <div class="hairTop">
     <Header />
+    <p>carouse</p>
     <SearchBox />
-    <CardBox1 />
+    <p>catalog</p>
+    <p>menu</p>
+    <MenuSection />
   </div>
 </template>
 
@@ -10,14 +13,14 @@
 import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/organisms/Header.vue";
 import SearchBox from "@/components/organisms/top/SearchBox.vue";
-import CardBox1 from "@/components/organisms/top/CardBox1.vue";
+import MenuSection from "@/components/organisms/top/MenuSection.vue";
 import { MenusGetRequestBaseDto } from "@/api/menus";
 
 @Component({
   components: {
     Header,
     SearchBox,
-    CardBox1,
+    MenuSection,
   },
 })
 export default class hairTop extends Vue {

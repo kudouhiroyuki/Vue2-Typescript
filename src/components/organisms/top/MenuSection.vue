@@ -1,10 +1,10 @@
 <template>
-  <div class="cardType1">
+  <section class="menuSection">
     <SectionHeading />
     <li v-for="item in menus" :key="item.menuId">
       {{ item }}
     </li>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -16,7 +16,7 @@ import SectionHeading from "@/components/molecules/heading/SectionHeading.vue";
     SectionHeading,
   },
 })
-export default class CardType1 extends Vue {
+export default class MenuSection extends Vue {
   public mainTitle = "";
   public subTitle = "";
   public titleObj: { key: string; mainTitle: string; subTitle: string }[] = [
